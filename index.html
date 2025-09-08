@@ -62,20 +62,25 @@
 
     <main>
         <!-- banner section -->
-        <section class="bg-[#cff0dc] w-full flex items-center justify-between">
-            <img src="./assets/hero-leaf1.png" alt="">
+        <section class="bg-[#cff0dc] w-full">
 
-            <div class=" flex flex-col text-center items-center justify-center space-y-6">
-                <h2 class="text-4xl font-bold whitespace-nowrap">Plant a Tree, Grow a Future</h2>
-                <p class="text-lg text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener
-                    for future
-                    generations.</p>
-                <div
-                    class="bg-[#FACC15] text-[#15803D] w-[133px] h-[45px] rounded-[990px] text-lg font-medium text-center p-2 ">
-                    Get Invlolved</div>
+            <div class=" flex items-center justify-center gap-6">
+
+                <img src="./assets/hero-leaf1.png" alt="" class="hidden md:block">
+
+                <div class=" flex flex-col text-center items-center justify-center space-y-6 py-6 md:py-0">
+                    <h2 class="text-4xl font-bold md:whitespace-nowrap ">Plant a Tree, Grow a Future</h2>
+                    <p class="text-lg text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth
+                        greener
+                        for future
+                        generations.</p>
+                    <div
+                        class="bg-[#FACC15] text-[#15803D] w-[133px] h-[45px] rounded-[990px] text-lg font-medium text-center p-2 ">
+                        Get Invlolved</div>
+                </div>
+
+                <img src="./assets/hero-leaf2.png" alt="" class="hidden md:block">
             </div>
-
-            <img src="./assets/hero-leaf2.png" alt="">
 
         </section>
 
@@ -87,7 +92,7 @@
             </div>
 
             <!-- campaign -->
-            <div class=" campaign-section py-20 space-y-6 w-[1090px] mx-auto">
+            <div class=" campaign-section py-20 space-y-6 max-w-[1090px] w-full mx-auto">
                 <h2 class="text-4xl font-semibold text-center pb-3">About the Campaign</h2>
                 <div class="flex justify-center items-center gap-4">
                     <img src="./assets/about.png" alt="">
@@ -143,11 +148,11 @@
 
 
         <!-- form section -->
-        <section class="bg-[#166534] pb-20">
-            <h2 class="text-4xl font-semibold text-white text-center p-12">Plant a Tree Today</h2>
+        <section class="bg-[#166534] md:pb-20 px-6 py-16">
+            <h2 class="md:text-4xl font-semibold  text-3xl text-white text-center p-12">Plant a Tree Today</h2>
 
-            <div class="bg-[#15803D] w-[650px] mx-auto p-10 rounded-lg">
-                <div class=" w-[570px] flex flex-col justify-center items-center mx-auto space-y-6">
+            <div class="bg-[#15803D] max-w-lg md:w-[650px] md:mx-auto p-8 md:p-10 rounded-lg">
+                <div class=" flex flex-col justify-center items-center mx-auto space-y-6">
                     <input class="bg-white border-none outline-none rounded-md w-full h-[48px] p-4" type="text"
                         placeholder="Your Name">
                     <input class="bg-white border-none outline-none rounded-md w-full h-[48px] p-4" type="email"
@@ -174,12 +179,12 @@
 
     </main>
 
-    <footer class="bg-[#14532D] text-white text-xl font-normal text-center h-[72px] w-full p-6">
+    <footer class="bg-[#14532D] text-white text-base md:text-xl font-normal text-center w-full py-6 px-4">
         <p>© 2025 Green Earth. All Rights Reserved.</p>
     </footer>
 
 
-
+<script src="./index.js"></script>
 </body>
 
 </html>
