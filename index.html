@@ -88,9 +88,9 @@
                         greener
                         for future
                         generations.</p>
-                    <div
+                    <button
                         class="bg-[#FACC15] text-[#15803D] w-[133px] h-[45px] rounded-[990px] text-lg font-medium text-center p-2 ">
-                        Get Invlolved</div>
+                        Get Invlolved</button>
                 </div>
 
                 <img src="./assets/hero-leaf2.png" alt="" class="hidden md:block">
@@ -170,17 +170,17 @@
                 <h1 class="text-center text-4xl font-bold mb-10">Our Impact</h1>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
 
-                    <div class="bg-white rounded-lg shadow p-8">
+                    <div class="bg-white rounded-lg shadow p-8 hover:bg-gray-200">
                         <h2 class="text-3xl font-semibold text-green-700">500K+</h2>
                         <p class="mt-2 text-lg text-[#1F2937] ">Trees Planted</p>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow p-8">
-                        <h2 class="text-3xl font-semibold text-green-700">120+</h2>
+                    <div class="bg-white rounded-lg shadow p-8 hover:bg-gray-200">
+                        <h2 class="text-3xl font-semibold text-green-700 ">120+</h2>
                         <p class="mt-2 text-lg text-[#1F2937] ">Communities Involved</p>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow p-8">
+                    <div class="bg-white rounded-lg shadow p-8 hover:bg-gray-200">
                         <h2 class="text-3xl font-semibold text-green-700">30+</h2>
                         <p class="mt-2 text-lg text-[#1F2937]">Countries Reached</p>
                     </div>
@@ -209,7 +209,8 @@
                         <option value="">1000 Trees</option>
                     </select>
 
-                    <button class="bg-[#FACC15] text-[#15803D] w-full h-[43px] text-lg font-semibold rounded-md">Donate
+                    <button type="reset"
+                        class="bg-[#FACC15] text-[#15803D] w-full h-[43px] text-lg font-semibold rounded-3xl hover:bg-gray-300">Donate
                         Now</button>
 
                 </div>
@@ -218,8 +219,22 @@
 
         </section>
 
+        <!-- modal -->
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box max-w-xl">
+                <h3 id="modalTitle" class="text-2xl font-bold mb-2"></h3>
+                <img id="modalImage" class="w-full h-60 object-cover rounded-lg mb-4" src="" alt="Tree Image">
+                <p id="modalCategory" class="text-green-700 font-medium mb-2"></p>
+                <p id="modalPrice" class="text-lg font-semibold mb-4"></p>
+                <p id="modalDescription" class="text-gray-700"></p>
 
-
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
 
     </main>
 

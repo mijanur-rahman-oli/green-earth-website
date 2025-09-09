@@ -68,7 +68,6 @@ const loadTreesByCategory = (treesId) => {
 
 
 
-
 const showTreesByCategory = (trees) => {
     treesContainer.innerHTML = "";
 
@@ -83,17 +82,42 @@ const showTreesByCategory = (trees) => {
             <p class="text-[#15803D] bg-[#DCFCE7] rounded-2xl py-1 px-2">${tree.category}</p>
             <p><i class="fa-solid fa-bangladeshi-taka-sign"></i>${tree.price ?? 'N/A'}</p>
           </div>
-          <button onclick="addToCart('${tree.id}','${tree.name}',${tree.price ?? 0})" class="bg-[#15803D] text-white px-4 py-2 rounded-lg">Add to Cart</button>
+          <button onclick="addToCart('${tree.id}','${tree.name}',${tree.price ?? 0})" class="bg-[#15803D] text-white px-4 py-2 mt-2 rounded-3xl hover:bg-[#34d058]">Add to Cart</button>
         </div>
       </div>
     `;
     });
+
+    document.querySelectorAll(".tree-name").forEach(title => {
+        title.addEventListener("click", () => {
+            handleModal(title.dataset.id);
+        });
+    });
 };
+
+function handleModal(id) {
+    fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            const plant = data.plants;
+
+            document.getElementById("modalTitle").innerText = plant.name;
+            document.getElementById("modalImage").src = plant.image ?? "https://via.placeholder.com/150";
+            document.getElementById("modalCategory").innerText = "Category: " + (plant.category ?? "N/A");
+            document.getElementById("modalPrice").innerHTML = `<i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plant.price ?? "N/A"}`;
+            document.getElementById("modalDescription").innerText = plant.description ?? "No description available.";
+
+            document.getElementById("my_modal_1").showModal();
+        })
+        .catch(err => console.error("Error loading plant details:", err));
+}
+
+
 
 
 
 function addToCart(id, name, price) {
-    
+
     const existingItem = cart.find(item => item.id === id);
     if (existingItem) {
         existingItem.quantity += 1;
@@ -104,6 +128,8 @@ function addToCart(id, name, price) {
         createCartItemDisplay(newItem);
     }
     updateTotal();
+  alert(`${name} has been added to the cart.`);
+
 }
 
 function createCartItemDisplay(item) {
@@ -112,7 +138,7 @@ function createCartItemDisplay(item) {
     li.id = `cart-item-${item.id}`;
     li.innerHTML = `
         <span>${item.name}</span>
-        <span class="text-gray-400"><span id="price-${item.id}">৳ ${item.price * item.quantity } x <span id="qty-${item.id}">${item.quantity}</span></span>
+        <span class="text-gray-400"><span id="price-${item.id}">৳ ${item.price * item.quantity} x <span id="qty-${item.id}">${item.quantity}</span></span>
         <button onclick="removeFromCart('${item.id}')" class="text-gray-400 ml-2">❌</button></span>
     `;
     cartList.appendChild(li);
